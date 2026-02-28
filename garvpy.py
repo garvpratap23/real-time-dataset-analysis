@@ -6,30 +6,30 @@ file_path = ("C:\\Users\\rajpu\\Downloads\\Washington_State_CPA__Certified_Publi
 df = pd.read_csv(file_path)
 
 print(df)
-print("\n➡️HEAD OF DATASET\n\n",df.head(),"\n\n\n")
+print("\nHEAD OF DATASET\n\n",df.head(),"\n\n\n")
 
-print("\n➡️TAIL OF DATASET\n\n",df.tail(),"\n\n\n")
+print("\nTAIL OF DATASET\n\n",df.tail(),"\n\n\n")
 
-print("\n➡️SUMMARY STATISTICS OF DATASET\n\n",df.describe(),"\n\n\n")
+print("\nSUMMARY STATISTICS OF DATASET\n\n",df.describe(),"\n\n\n")
 
-print("\n➡️INFORMATION OF DATASET\n\n",df.info(),"\n\n\n")
+print("\nINFORMATION OF DATASET\n\n",df.info(),"\n\n\n")
 
-print("\n➡️COLUMN NAMES\n\n",df.columns,"\n\n\n")
+print("\nCOLUMN NAMES\n\n",df.columns,"\n\n\n")
 
-print("\n➡️SHAPE OF DATASET\n\n",df.shape,"\n\n\n")
+print("\nSHAPE OF DATASET\n\n",df.shape,"\n\n\n")
 
 print("\n ➡ COUNT  OF MISSING VALUES OF EACH COLUMN\n\n",df.isnull().sum(),"\n\n\n")
 
 print("\n ➡ DROP ALL ROWS CONTAINING MISSING VALUES\n\n",df.dropna(),"\n\n\n")
 
 duplicate_rows = df[df.duplicated()]
-print("🔁 Duplicate Rows:")
+print("Duplicate Rows:")
 print(duplicate_rows)
 
 print(f"\nTotal number of duplicate rows: {duplicate_rows.shape[0]}")
 
 unique_columns = [col for col in df.columns if df[col].is_unique]
-print("\n✅ Columns with all unique values:")
+print("\nColumns with all unique values:")
 print(unique_columns)
 
 correlation_matrix = df.corr(numeric_only=True)
@@ -53,7 +53,7 @@ df_cleaned = df.dropna(subset=["City"])
 city_counts = df_cleaned["City"].value_counts().head(20)
 
 plt.figure(figsize=(14, 7))
-sns.barplot(x=city_counts.values, y=city_counts.index)  # ⬅️ removed palette
+sns.barplot(x=city_counts.values, y=city_counts.index)  #  removed palette
 plt.title("Top 20 Cities by Number of CPA Firms in Washington State", fontsize=16)
 plt.xlabel("Number of CPA Firms")
 plt.ylabel("City")
@@ -216,5 +216,6 @@ plt.grid(True)
 plt.legend(title='Firm Location')
 plt.tight_layout()
 plt.show()
+
 
 
